@@ -11,9 +11,6 @@ class Solution(object):
         for i in range(1, len(arr)):
             if self.set_bit(arr[i]) <= self.set_bit(arr[i-1]):
                 ptr = i
-                if self.set_bit(arr[i]) < self.set_bit(arr[i-1]):
-                    arr[i-1], arr[i] = arr[i], arr[i-1]
-                    ptr = i-1
                 # finish down the road for this element
                 while ptr > 0:
                     curr_set = self.set_bit(arr[ptr]) 
